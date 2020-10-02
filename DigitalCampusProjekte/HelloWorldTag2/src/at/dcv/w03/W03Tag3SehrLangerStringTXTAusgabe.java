@@ -92,7 +92,7 @@ public class W03Tag3SehrLangerStringTXTAusgabe {
         try {
 
             // File erstellen
-            FileOutputStream fos = new FileOutputStream("C:\\Users\\DCV\\Desktop\\HesseErgebnisse.txt"); // Hier wird ein neues File mit dem Namen "Filename" erstelle, die wir dann Bearbeiten können.
+            FileOutputStream fos = new FileOutputStream("C:\\Users\\DCV\\Desktop\\HesseErgebnisse.txt" ,true); // Hier wird ein neues File mit dem Namen "Filename" erstelle, die wir dann Bearbeiten können.
             PrintStream ps = new PrintStream(fos);
 
             // Schreiben des Files
@@ -106,6 +106,7 @@ public class W03Tag3SehrLangerStringTXTAusgabe {
             ps.println("6.: Anzahl Hesse: " + wordCountHesse(text));
             ps.println("7.: LowerCaseCount: " + lowerCaseCount(text));
             ps.println("8.: UpperCaseCount: " + upperCaseCount(text));
+            ps.println(" ");
             System.out.println("Hesse Text File wurde am Desktop abgelegt.");
 
             // Schließen des Files.
