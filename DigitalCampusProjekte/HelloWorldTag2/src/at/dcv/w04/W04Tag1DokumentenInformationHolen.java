@@ -9,7 +9,9 @@ import java.util.Scanner;
 
 /*--- Wie lese ich eine Einzige Zahl des Text Dokuments ( es wird die erste Zahl im Dokument gelesen) --- */
 public class W04Tag1DokumentenInformationHolen {
+
     public static void main(String[] args) {
+
         FileInputStream fis = null;
         try { // Hier wird der Pfad zum Dokument indiziert. Und es gibt eine Exception für File not found
             fis = new FileInputStream("C:\\Users\\DCV\\Desktop\\input.txt"); // wenn ein File gefunden wird, dann ändert sich die Variable des Fileinputstreams.
@@ -22,6 +24,7 @@ public class W04Tag1DokumentenInformationHolen {
             Scanner sc = new Scanner(fis); // new Scanner(System.in);
 
             int num1 = Integer.MIN_VALUE;
+
             try {
                 String input1 = sc.nextLine();
                 int value = Integer.valueOf(input1);
