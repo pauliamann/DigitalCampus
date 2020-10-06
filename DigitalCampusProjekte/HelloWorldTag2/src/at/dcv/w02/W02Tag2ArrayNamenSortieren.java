@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class W02Tag2ArrayNamenSortieren {
     public static void main(String[] args) {
-        String[] names = {"E", "C", "B", "D", "A"};
+        String[] names = {"Edi", "Clemens", "Bbla", "David", "Ariel"};
 
         System.out.println(("Array Vorgabe: " + Arrays.toString(names)));
 
@@ -32,7 +32,7 @@ public class W02Tag2ArrayNamenSortieren {
                     names[i + 1] = temp;
                 }
                 ++iteration;
-//                System.out.println(("Iteration " + iteration + ".: " + Arrays.toString(names)));
+                System.out.println(("Iteration " + iteration + ".: " + Arrays.toString(names)));
             }
             result = Arrays.toString(names);
         }
