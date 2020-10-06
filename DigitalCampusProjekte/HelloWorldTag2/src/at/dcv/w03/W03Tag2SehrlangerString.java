@@ -87,14 +87,14 @@ public class W03Tag2SehrlangerString {
         System.out.println("1.: Anzahl der Zeichen: " + textLength(text));
         System.out.println("2.: Anzahl Charaktere: " + textLengthStrip(text));
         System.out.print("3.: Anzahl Worte: " + wordCount(text));
-        System.out.println(" 3a.: Clemens Anzahl Wort: " + wordCountClemens(text));
         System.out.print("4.: Längstes Wort: " + longestString(text));
         System.out.println(" 4a .: Kürzestes Wort: " + shortestString(text));
         System.out.println("5.: erstes Wort alphabetisch: " + firstWord(text));
         System.out.println("6.: Anzahl Hesse: " +wordCountHesse(text));
         System.out.println("7.: LowerCaseCount: " + lowerCaseCount(text));
         System.out.println("8.: UpperCaseCount: " + upperCaseCount(text));
-
+        System.out.println();
+        printWordSort(text);
 
 //         *   8.: Sortierung der Wörter nach Wortlänge (längstes zuerst, kürzestes zuletzt)
 
@@ -121,7 +121,8 @@ public class W03Tag2SehrlangerString {
     public static int wordCount (String text) {
         //     Definition Wort: Charactere mit Leerfeld davor und danach
 
-        String emptyReplaced = text.replaceAll("[,0-9.:()\"]", "")
+        String emptyReplaced = text.replaceAll("[,0-9:()\"]", "")
+                .replaceAll("[.]", " ")
                 .replaceAll("[-\n]", " ")
                 .replaceAll("[ ]+", " ");
         String[] textArray = emptyReplaced.split(" ");
@@ -175,13 +176,6 @@ public class W03Tag2SehrlangerString {
         String[] textArrayS = emptyReplaced.split(" ");
 
 
-//        String emptyReplaced = text.replaceAll("[\\n0-9.:\\t()\\\"]", "");  // noch regex [ ]+ zufügen, um die mehreren Leerzeichen zu entfernen.
-//        String emptyReplacedExtended = emptyReplaced.replaceAll("[ ]+" , " ");
-//        String ohneUmlaute = emptyReplacedExtended.replace("ü", "ue")
-//                .replace("ö", "oe")
-//                .replace("ä", "ae")
-//                .replace("ß", "ss");
-//        String[] textArrayS = ohneUmlaute.split(" ");
 
 // prüfen ob der erste Buchstabe eines Strings kommt früher im Alphabet als der erste Buchstabe vom String davor. Wenn, dann wird er als erterString gespeichert
         int erstesWort = 0;
@@ -191,16 +185,6 @@ public class W03Tag2SehrlangerString {
             }
         }
 
-
-//        String firstWord = textArrayS[0];
-//        for (int i = 0; i < textArrayS.length-1; i++) {
-//            int compare = textArrayS[i].compareToIgnoreCase(textArrayS[i+1]);
-////            System.out.println(i + ". Runde");
-//            if (compare < 0) {
-//                firstWord = textArrayS[i];
-//            }
-////            System.out.println(firstWord);
-//        }
         return textArrayS[erstesWort];
     }
 
@@ -256,17 +240,23 @@ public class W03Tag2SehrlangerString {
 
     //          9.: Sortiere die Wörter der Wortlänge Absteigend
 
-    public static int wordCountClemens (String text) {
-        int words = 0;
+    public static void printWordSort(String text) {
+        String emptyReplaced = text.replaceAll("[\\n0-9.:\\t()\\\"]", "");  // noch regex [ ]+ zufügen, um die mehreren Leerzeichen zu entfernen.
+        String emptyReplacedExtended = emptyReplaced.replaceAll("[ ]+" , " ");
+        String[] textArrayS = emptyReplacedExtended.split(" ");
 
-        for (int i = 1; i < text.length(); i++)
-        {
-            Character charOne = text.charAt(i - 1);
-            Character charTwo = text.charAt(i);
-            if (Character.isLetter(charOne) == true && Character.isLetter(charTwo) == false) words++; // Zählt ob davor bzw danach immer ein bzw kein Buchstabe ist.
-            if (i == text.length() - 1 && Character.isLetter(charOne)) words++; //  Definiert das Letzte Wort
-
-        } return words;
+//        String longestWord = textArrayS[0];
+        String tmp = "";
+        for (int i = 0; i < textArrayS.length; i++) {
+            for (int j = 0; j < textArrayS.length-1-i; j++) {
+                if (textArrayS[j].length() > textArrayS[j+1].length()){
+                    tmp = textArrayS[j];
+                    textArrayS[j] = textArrayS[j + 1];
+                    textArrayS[j+1] = tmp;
+                }
+            }
+            System.out.print(tmp + " ");
+        }
     }
 }
 
