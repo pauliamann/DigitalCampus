@@ -29,19 +29,28 @@ public class W04Tag4AuswertenLukasAufgabe2 {
 
         String[] lines = W04Tag4CSVAuswertenLukas.splitLines(text);
 
-        String[] variable = maxColumnWidth(lines);
-        System.out.println(Arrays.toString(variable));
+        String[] maxColumns = maxColumnWidth(lines);
 
+        for (String line : lines) {
+            String[] columns = line.split(",");
+            for (int i = 0; i < maxColumns.length; i++) {
+
+                W04Tag4CSVAuswertenLukas.printColumn(columns[i], maxColumns[i].length());
+            }
+            System.out.println("");
+
+        }
     }
 
-    public static String[] maxColumnWidth (String[] lines) {
-        // Wir gehen alle spalten aller Zeilen durch, und vergleichen die spaltenbreite mit der aktuellen Spaltenbreite. Wenn größer, wird das Wort gespeichert.
+
+    public static String[] maxColumnWidth(String[] lines) {
+        // Wir gehen alle Spalten aller Zeilen durch, und vergleichen die Spaltenbreite mit der aktuellen Spaltenbreite. Wenn größer, wird das Wort gespeichert.
         // Zunächst initialisieren wir das Array mit Null, da wir die Größe noch nicht kennen.
 
         String[] maxColumnWord = null;
 
         // wir gehen über jede Zeile
-        for (String line: lines) {
+        for (String line : lines) {
             // Spalten werden gesplittet
             String[] column = line.split(",");
             // Wenn maxColumnWord noch null ist, weisen wir ihm ein Array mit der Größe von column.length zu.
@@ -53,7 +62,7 @@ public class W04Tag4AuswertenLukasAufgabe2 {
                 String currentColumn = column[i];
                 // Spaltenwerte Spitzenreiter
                 String maxColumn = maxColumnWord[i];
-                if (currentColumn.length() > maxColumn.length() ) {
+                if (currentColumn.length() > maxColumn.length()) {
                     maxColumnWord[i] = currentColumn;
                 }
             }
