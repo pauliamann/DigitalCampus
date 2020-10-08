@@ -1,5 +1,7 @@
 package at.dcv.w04;
 
+import java.util.Arrays;
+
 public class W04Tag4AuswertenLukasAufgabe2 {
     /* --- Aufgabenstellung
 1. Tabellarische Darstellung (jede Spalte ist 15 Charaktere breit)
@@ -27,7 +29,35 @@ public class W04Tag4AuswertenLukasAufgabe2 {
 
         String[] lines = W04Tag4CSVAuswertenLukas.splitLines(text);
 
+        String[] variable = maxColumnWidth(lines);
+        System.out.println(Arrays.toString(variable));
 
+    }
 
+    public static String[] maxColumnWidth (String[] lines) {
+        // Wir gehen alle spalten aller Zeilen durch, und vergleichen die spaltenbreite mit der aktuellen Spaltenbreite. Wenn größer, wird das Wort gespeichert.
+        // Zunächst initialisieren wir das Array mit Null, da wir die Größe noch nicht kennen.
+
+        String[] maxColumnWord = null;
+
+        // wir gehen über jede Zeile
+        for (String line: lines) {
+            // Spalten werden gesplittet
+            String[] column = line.split(",");
+            // Wenn maxColumnWord noch null ist, weisen wir ihm ein Array mit der Größe von column.length zu.
+            if (maxColumnWord == null) {
+                maxColumnWord = column;
+            }
+            for (int i = 0; i < column.length; i++) {
+                // Aktueller Spaltenwert
+                String currentColumn = column[i];
+                // Spaltenwerte Spitzenreiter
+                String maxColumn = maxColumnWord[i];
+                if (currentColumn.length() > maxColumn.length() ) {
+                    maxColumnWord[i] = currentColumn;
+                }
+            }
+        }
+        return maxColumnWord;
     }
 }
