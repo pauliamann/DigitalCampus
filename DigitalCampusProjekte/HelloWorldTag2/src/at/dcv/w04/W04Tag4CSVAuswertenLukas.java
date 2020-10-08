@@ -2,6 +2,20 @@ package at.dcv.w04;
 
 import java.io.*;
 
+    /* --- Aufgabenstellung
+    1. Tabellarische Darstellung (jede Spalte ist 15 Charaktere breit)
+            Längere Texte werden abgeschnitten.
+            Zwischen den Spalten müssen "" kommen.
+    2. Tabellarische Darstellung (Dynamische Spaltenbreite)
+    3. Analyse
+            a. Wie viel Wert wurde verkauft? (Komplettumsatz)
+            b. Wie viel Stücke wurden verkauft?
+            c. Wer hat am meisten Geld ausgegeben?
+            d. Wer hat am meisten Stücke gekauft?
+            e. An welchem Tag wurde am meisten Stücke verkauft?
+            f. Durchschnitt Einkauf pro Kunde?
+    * */
+
 public class W04Tag4CSVAuswertenLukas {
     public static void main(String[] args) {
         checkPreconditions(args);
@@ -30,21 +44,22 @@ public class W04Tag4CSVAuswertenLukas {
         if (column.length() < length) {
             // Auffüllen mit Leerzeichen
             int spaces = length - column.length();
+            System.out.print(column);
             for (int i = 0; i < spaces; i++) {
                 System.out.print(" ");
 
             }
-            System.out.print(column);
         } else if (column.length() > length){
             // String muss abgeschnitten werden
-            System.out.print(column.substring(0, length));;
+            System.out.print(column.substring(0, length));
+
         } else {
             // Wenn gleich lang: einfach ausgeben
             System.out.print(column);
+
         }
-
+        System.out.print(" ");
     }
-
 
     public static void printLines (String[] lineArray) {
         /*        // for Zählschleife mit index (als alternative Ausgabe verwenden wir die for each Schleife)
