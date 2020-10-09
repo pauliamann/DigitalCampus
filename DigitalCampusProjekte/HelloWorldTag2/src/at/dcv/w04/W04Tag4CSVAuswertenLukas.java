@@ -25,6 +25,8 @@ public class W04Tag4CSVAuswertenLukas {
         if (text == null) {
             System.out.println("Text konnte nicht eingelesen werden.");
             System.exit(1);
+        } else {
+            System.out.println("Text wurde gelesen.");
         }
 
         String[] lineArray = splitLines(text);
@@ -79,9 +81,11 @@ public class W04Tag4CSVAuswertenLukas {
         // Das Argument sollte unsere CSV Datei sein;
         // Im args Array stehen alle übergebenen Argumente.
         if (args.length < 1) {
-            System.out.println("Bitte gib eine Datei ein");
+            System.out.println("Bitte gib eine Datei in Args ein");
             // Wir beenden das Programm mit einem Statuscode ungleich 0 -> Fehler.
             System.exit(1); // Status 1 bedeutet, dass ein Fehler auftritt, 0 bedeutet es ist erfolgreich.
+        } else {
+            System.out.println("In args wurde Information gefunden");
         }
 
         // Prüfen ob Datei existiert
@@ -92,6 +96,8 @@ public class W04Tag4CSVAuswertenLukas {
         if (!file.exists()) {
             System.out.println("Die Datei existiert nicht... ");
             System.exit(1);
+        } else {
+            System.out.println("Die Datei existiert.");
         }
     }
 
