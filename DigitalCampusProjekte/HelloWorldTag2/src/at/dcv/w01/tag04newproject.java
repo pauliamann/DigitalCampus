@@ -1,8 +1,7 @@
 package at.dcv.w01;
 
 public class tag04newproject {
-    public static void main(String[] args) {
-        printArrowToRight("I", 3);
+    public static void main(String[] args) { printArrowToRight("I", 3);
     }
 
     public static void printArrowToRight (String txt, int spaltenBreite) {
