@@ -7,7 +7,7 @@ public class W04Tag5PascalDreieckMultidimensionaleArrays {
 
         int size = 5;
 
-
+        // Multidimensionales Array wird erstellt
         int pascal[][] = new int[size][size];
 
         for (int i = 0; i < pascal.length; i++) { // Zeile
@@ -19,9 +19,8 @@ public class W04Tag5PascalDreieckMultidimensionaleArrays {
             }
             // Die Diagonale mit 1 Füllen
             pascal[i][i] = 1;
-            System.out.println(Arrays.toString(pascal[i]));
+//            System.out.println(Arrays.toString(pascal[i]));
         }
-
         printPascal(pascal);
     }
 
@@ -37,8 +36,6 @@ public class W04Tag5PascalDreieckMultidimensionaleArrays {
             }
             System.out.println();
         }
-
-
     }
 
 
