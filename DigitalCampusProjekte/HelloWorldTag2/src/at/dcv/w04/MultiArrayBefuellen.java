@@ -1,15 +1,17 @@
 package at.dcv.w04;
 
-
 import java.io.*;
+
+// Lösung von Gyula
 
 public class MultiArrayBefuellen {
     public static void main(String[] args) {
-        String[][] table = readCSV("C:\\Users\\DCV\\Desktop\\TableData.csv");
+        String[][] table = readCSV("C:\\Users\\DCV\\Desktop\\homes.csv");
         cleanData(table);
 
-        countAvarage(table, 5);
+        countAvarage(table, 5); // Die Spalte deren Inhalt für die Average Berechnung verwendet werden soll.
         printDynTable(table);
+
     }
 
     public static void cleanData(String[][] table){
@@ -61,7 +63,7 @@ public class MultiArrayBefuellen {
         }
 
 
-        System.out.print("The avarage of column " + table[0][column] + " is " + String.format("%.2f", sum / countSums));
+        System.out.print("The avarage of column \"" + table[0][column] + "\" is " + String.format("%.2f", sum / countSums));
         if (countSums != table.length-1){
             System.out.print(" (Attention the column contains alphanumerical values. These have been ignored.)");
         }
@@ -109,5 +111,18 @@ public class MultiArrayBefuellen {
         }
 
         return count;
+    }
+
+    public static int getColumnCount(String[] textSplit, int lineCount) {
+        int columnCountSpeicher = 0;
+        for (int i = 0; i < textSplit.length; i++) {
+            String[] zeile = textSplit[i].split(",");
+            for (int j = 0; j < zeile.length; j++) {
+                ++columnCountSpeicher;
+            }
+        }
+        int columnCount = columnCountSpeicher / lineCount;
+
+        return columnCount;
     }
 }
