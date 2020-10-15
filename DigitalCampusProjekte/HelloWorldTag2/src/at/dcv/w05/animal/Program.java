@@ -19,16 +19,16 @@ public class Program {
         Cat cat2 = new Cat("Mitty", 12);
 
 
-        ArrayList<Animal> animals = new ArrayList<>();
-        animals.add(dog1);
-        animals.add(dog2);
-        animals.add(dog3);
-        animals.add(cat1);
-        animals.add(cat2);
+        ArrayList<Animal> animalsList = new ArrayList<>();
+        animalsList.add(dog1);
+        animalsList.add(dog2);
+        animalsList.add(dog3);
+        animalsList.add(cat1);
+        animalsList.add(cat2);
 
         System.out.println("__ . __ . __ . __");
 
-        Animal.printInfos(animals);
+        Animal.printInfos(animalsList);
 
 
         /* --- Ausgaben --- */
@@ -42,6 +42,40 @@ public class Program {
         System.out.println("Katze");
         cat1.purr();
         System.out.println(dog1.getInfo());
+
+
+        System.out.println("Anzahl: " + count(animalsList, Dog.class));
+        ;
+//        System.out.println("Number of Cats " + countCats(animals));
+    }
+
+    public static int countCats(ArrayList<Animal> animalsList) {
+
+        int counter = 0;
+
+        for (Animal animal: animalsList    ) {
+
+            if (animal instanceof Cat) {
+                counter++;
+            }
+        }
+        return counter;
+    }
+
+    public static int count(ArrayList<Animal> animalsVariable, Class cls) { // Class ist weil wir uns auf die Klasse Cat oder Dog beziehen wollen
+
+        int counter = 0;
+        for (Animal animal: animalsVariable    ) {
+        // Prüft genau ob es die selbe Klasse ist
+            /*if(animal.getClass().equals(cls)) {
+                ++counter;
+            }*/
+
+            if(cls.isInstance(animal)) {
+                ++counter;
+            }
+        }
+        return counter;
 
     }
 }
