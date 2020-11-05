@@ -1,0 +1,7 @@
+ReadMe for museum_improved:
+
+In den Classen Museum, Etage, Raum gibt es immer die gleichen funktionen.
+
+daher wurde eine Klasse "Knoten" angelegt, die diese immer selben funktionen beinhalten .
+- Museum, Etage, Raum extenden dann die Klasse Knoten und man spart sich dort das kopieren dieser Funktionen.
+
