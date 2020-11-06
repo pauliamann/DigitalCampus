@@ -18,7 +18,6 @@ public class CodingCampus {
         this.name = name;
         this.courseList = new Vector<Course>();
         this.peopleList = new Vector<People>();
-
     }
 
     public JavaCoding searchAndCreateJava(String kursName, String description, int nrParticipants, int dauer, String unterrichtsmaterial) {
