@@ -1,0 +1,19 @@
+README:
+Zoo Simulation
+
+Besucher besuchen das Museum und zahlen dafür
+- BESUCHER
+    - betreten einen Raum
+    - gehen dann
+        zu einen Anderen
+        oder verlassen das Museum.
+    - Unter den Besuchern kann ein DIEB sein
+        wenn ein Dieb alleine in einem Raum ist stielt er ein Kunstwerk
+        danach verlässt er das Museum
+
+- KURATOR
+    - sammelt Geldspenden
+    - Kann neue Kunstwerke kaufen wenn genug Geld (Spenden + Einkünfte) vorhanden sind.
+
+
+
