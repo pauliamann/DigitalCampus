@@ -1,12 +1,15 @@
 package at.dcv.w07;
 
+import java.util.Scanner;
+
 public class Wuerfel3D {
 
     public static void main(String[] args) {
-        int size = 5;
+
+        int size = scannerZahl();
         int diagonal = size - 2;
 
-
+        System.out.printf("Du hast %s eingegeben. Hier ist dein 3D Würfel: \n", size);
         for (int i = 0; i < diagonal; i++) {
             // Parallelogramm oben
             for (int j = 0; j < diagonal - i; j++) {
@@ -55,7 +58,6 @@ public class Wuerfel3D {
                     System.out.print("  ");
                 }
                 System.out.print("0");
-// todo: auf Variable umstellen. nur notwendig wenn der winkel variabel sein soll
                 if (j == 1 || j == 2) {
 
                     for (int y = 0; y < diagonal - 2; y++) {
@@ -63,7 +65,7 @@ public class Wuerfel3D {
                     }
                     System.out.print("0");
                 } else {
-                    for (int i = 0; i < diagonal-j; i++) {
+                    for (int i = 0; i < diagonal - j; i++) {
                         System.out.print(" ");
                     }
                     System.out.print("0");
@@ -78,7 +80,30 @@ public class Wuerfel3D {
             }
             System.out.println();
         }
+    }
 
+    public static int scannerZahl() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Gib eine Zahl zwischen 5 & 20 ein.");
+        int num1 = Integer.MIN_VALUE;
+        while (num1 == Integer.MIN_VALUE) {
+            try {
+                String input1 = sc.nextLine();
+                int value = Integer.valueOf(input1);
+
+                if ((value >= 5) && (value <= 20)) {
+                    num1 = value;
+                    System.out.println("true");
+                } else {
+                    System.out.println("Die Zahl ist NICHT zwischen 5 & 20. \nGib eine korrekte Zahl ein:");
+                }
+
+            } catch (NumberFormatException nfe) {
+                System.out.println("Sie müssen eine Zahl eingeben:");
+            }
+        }
+        return num1;
 
     }
+
 }
