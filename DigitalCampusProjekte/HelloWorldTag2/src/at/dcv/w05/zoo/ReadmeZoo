@@ -1,0 +1,106 @@
+
+16.10.2020
+AUFGABE ZOO:
+
+--- VARIABLEN --- :
+    Zoo
+        --> Gehege
+            --> Tiere
+                --> Futter
+        --> Pfleger
+        --> Tierarzt
+
+
+--- I N F O --- :
+    Pfeger hat:
+        - Liste der Gehege
+        - Liste welches Tier welches Futter braucht
+
+
+--- Z I E L --- :
+    1.  Simulation ( 1 Tag )       // hier muss eine Simulation im Zoo eine Simulation Pfleger füttert aufrufen + Tiere beissen + tierarzt heilen
+            - Pfleger füttert
+            - Tiere beissen
+            - Tierarzt heilt
+    2.  Tiere haben Futterbedarf:
+            - (Menge, Sorte)
+    3.  Pfleger
+            - kümmert sich um Gehege
+            - und füttert die Tiere
+    4.  Tiere haben Gesundheit
+            - Faktor: 0 - 100
+            - wenn 0 dann Tier existiert nicht mehr
+    5.  Tiere beissen
+            - sich mit einem Schadenswert 0-20
+            - aber nicht sich selbst
+            - nur innerhalb des Geheges
+    6.  Tierarzt heilt
+            - 1 Tier / Tag
+            - das mit der größten Not ( 10 - 50 Punkte)
+    7.  Pflegeperson bewundert:
+            - Tier 20 % / Gattung
+            - Lieblingstier 55 % / Gattung
+            - Pflegeperson bewundert nur Tiere deren Gehege er betreut
+    8.  Statistik:
+            - Wieviel Futter wurde verwendet ( Tagesbedarf )
+    9.  CSV Datei Import
+            - Tiere
+            - Personen
+
+
+
+--- D E F I N I T I O N  für  die  K L A S S E N  STRUKTUR ---
+
+Z O O
+--- ATTRIBUTE:
+-   Name
+-   int Tag
+-   Vektor <Gehege>
+-   Vektor <Pfleger>
+-   Vektor <Futter>
+-   Tierarzt
+
+--- FUNKTIONEN:
++   Constructor
++   Simulation() für den Tagesablauf
++   Add - Gehege
+        - Tierarzt
+        - Pfleger
+        - Futter
++   Ausgabe für Tagesstatistik
++   Ausgabe Bedarfsliste (schön formatiert)
+
+
+G E H E G E
+--- ATTRIBUTE:
+-   Name
+-   Vektor<Tier>
+
+--- FUNKTIONEN:
++   Constructor
++   Simulation (Tiere füttern)
++   Add - Tier
+
+
+T I E R E
+--- ATTRIBUTE:
+-   Name (Willi, Willman,..)
+-   Gattung (String)
+-   Futter (String)
+-   int Tagesbedarf
+-   int Gesundheit
+-   Gehege zuordnung
+
+--- FUNKTIONEN:
++   Tier Constructor
++   add - Gehege (die Tiere müssen wissen mit wem sie im Gehege sind)
++   Simulation (Tiere beissen sich)
++   Simulation heilen
+
+P F L E G E R
+
+T I E R A R Z T
+
+F U T T E R
+
+

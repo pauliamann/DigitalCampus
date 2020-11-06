@@ -1,0 +1,24 @@
+Ich hab versucht das Zoo Beispiel zu lösen.
+
+zum teil konnte ich die ersten Zwei Teile der Simulation umsetzen (Pfleger Füttert, Tiere beissen sich)
+
+
+Speziell beim Tiere beissen hab ich Probleme.
+
+- Ich schaffs nicht ein totes Tier aus dem Vektor zu löschen.
+- Ich verstehe nicht wie ich von klassen in denen der Vektor nicht erstellt wurde auf den in der Klasse erstellten Vektor zugreifen kann.
+        Konkret:
+        - Vektor Tiere befindet sich in Klasse Gehege
+        - Funktion beissen befindet sich in Klasse Tiere damit ich auf die Attribute (Gesundheit) zugreifen kann.
+        - Hier stehe ich dann an und kann bei Gesundheit 0 das betroffene Tier nicht aus dem Vektor entfernen.
+
+Generell habe ich noch nicht 100%ig verstanden, wie ich in welcher Klasse informationen aufbereiten muss, damit ich sie in anderen Klassen verwenden kann.
+
+
+Pfleger füttert:
+- ich konnte die benötigte Futtermenge und Futterart bei jedem einzelnen Tier ausgeben
+- und auch die summe Anzahl an benötigten Futter ausgeben.
+
+Aber:
+- ich schaffs nicht die Futtersumme aufgesplittet nach Futterart auszugeben
+- Wenn du die Lösung oder Tipps zu diesen konkreten Problemen hast, dann würds mir helfen und evtl schaffe ich dann noch die restlichen Todos selbst.
