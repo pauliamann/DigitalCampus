@@ -28,7 +28,7 @@ public class main {
 
 
 
-        Auto auto = new Auto("Fiat", "Punto", 20, 6.0f, "Diesel", reifen);
+        Auto auto = new Auto("Fiat", "Punto", 20, 6.0f, "Benzin", reifen);
         auto.setFahrer(fahrer1);
         auto.setTankstelle(tanke);
         auto.setWerkstatt(werkstatt);

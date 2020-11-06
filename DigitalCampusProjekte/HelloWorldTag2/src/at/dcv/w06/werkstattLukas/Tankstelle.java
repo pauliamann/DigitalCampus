@@ -32,7 +32,7 @@ public class Tankstelle {
         String treibstoffArt = auto.getTreibstoff();
         Treibstoff treibstoff = findeTreibstoff(treibstoffArt);
 
-        if (treibstoff != null) {
+        if (findeTreibstoff(treibstoffArt) != null) {
             // Wenn der Treibstoff vorhanden ist, fährt sie fort und Tankt
             float zuTanken = auto.getTankGroesse() - auto.getTankStand();
             float rechnung = zuTanken * treibstoff.getPreisProLiter();

@@ -92,11 +92,9 @@ public class Auto {
     }
 
     public void checkReifenprofil(Reifen[] reifen) {
-
         for (Reifen r : reifen) {
             System.out.println(r.getReifenProfil());
         }
-
     }
 
     public void setAnzahlTanken(int anzahlTanken) {
@@ -114,7 +112,6 @@ public class Auto {
     public Reifen[] getReifen() {
         return reifen;
     }
-
 
     public void setWerkstatt(Werkstatt werkstatt) {
         this.werkstatt = werkstatt;
@@ -155,7 +152,6 @@ public class Auto {
     public void setTankStand(float tankStand) {
         this.tankStand = tankStand;
     }
-
 
     @Override
     public String toString() {
