@@ -13,10 +13,10 @@ public class Program {
         Dog dog2 = new Dog("Bello", 5);
         Dog dog3 = new Dog("Apollo", 11);
 
-        // ---
-
         Cat cat1 = new Cat("Pussycat", 19); // Hier wird eine Instanz von der Vorlage/Klasse (Dog.java) erstellt.
         Cat cat2 = new Cat("Mitty", 12);
+
+        AngoraKatze aCat1 = new AngoraKatze("Angi", 1);
 
 
         ArrayList<Animal> animalsList = new ArrayList<>();
@@ -25,6 +25,7 @@ public class Program {
         animalsList.add(dog3);
         animalsList.add(cat1);
         animalsList.add(cat2);
+//        animalsList.add(aCat1);
 
         System.out.println("__ . __ . __ . __");
 
@@ -44,8 +45,11 @@ public class Program {
         System.out.println(dog1.getInfo());
 
 
-        System.out.println("Anzahl: " + count(animalsList, Dog.class));
-        ;
+        System.out.println("Anzahl Cat: " + count(animalsList, Cat.class));
+        System.out.println("Anzahl dog: " + count(animalsList, Dog.class));
+        System.out.println("Anzahl AngoKat: " + count(animalsList, AngoraKatze.class));
+        System.out.println("Anzahl Animal: " + count(animalsList, Animal.class));
+
 //        System.out.println("Number of Cats " + countCats(animals));
     }
 
