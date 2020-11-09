@@ -15,5 +15,21 @@ Besucher besuchen das Museum und zahlen dafür
     - sammelt Geldspenden
     - Kann neue Kunstwerke kaufen wenn genug Geld (Spenden + Einkünfte) vorhanden sind.
 
+----
 
+Besucher betreten einen Raum
 
+Besucher Class
+    Attribut:
+        boolean Dieb nicht Dieb;
+    Funktion:
+        besucherIn
+        besucherOut
+        stehlen
+
+Raum class
+    Attribut:
+    Name
+
+Museum:
+    hat räume, darin steht wieviele Personen sind

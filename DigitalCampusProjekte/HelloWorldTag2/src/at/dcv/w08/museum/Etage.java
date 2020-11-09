@@ -13,6 +13,11 @@ public class Etage {
         this.raumVector = new Vector<Raum>();
     }
 
+
+    public Vector<Raum> getRaumVector() {
+        return raumVector;
+    }
+
     public String getName() {
         return name;
     }
@@ -26,27 +31,24 @@ public class Etage {
         }
     }
 
-    public Raum findOrAdd(Raum neuerRaum) {
-        int index = raumVector.indexOf(neuerRaum);
-        if (index>= 0) {
-            return raumVector.get(index);
-        } else {
-            raumVector.add(neuerRaum);
-            return neuerRaum;
-        }
-    }
 
-    public Raum searchAndCreateRaum (Raum neuerRaum) {
+    public Raum searchAndCreateRaum (String neuerRaum) {
         for (Raum e : raumVector) {
             if (e.getName().equals(neuerRaum)) {
-                System.out.println("schon vorhanden");
+//                System.out.println(e.getName() + " schon vorhanden");
                 return e;
             }
         }
-        raumVector.add(neuerRaum);
-        return neuerRaum;
-
+        Raum r = new Raum(neuerRaum);
+        raumVector.add(r);
+        return r;
     }
 
-
+    @Override
+    public String toString() {
+        return "Etage{" +
+                "name='" + name + '\'' +
+                ", raumVector=" + raumVector +
+                '}';
+    }
 }

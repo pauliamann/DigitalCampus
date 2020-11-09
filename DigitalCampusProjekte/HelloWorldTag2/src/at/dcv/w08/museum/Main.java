@@ -7,7 +7,7 @@ import at.dcv.w08.interfaceInnerClassAbstract.ICSVProcessor;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Arrays;
+import java.util.Random;
 import java.util.Vector;
 
 public class Main {
@@ -27,9 +27,9 @@ public class Main {
         @Override
         public void process(String[] columns) {
             Museum museum = searchAndCreateMuseum(columns[0], museumVector);
-            Etage etage = museum.findOrAdd(new Etage(columns[1]));
-            Raum raum = etage.findOrAdd(new Raum(columns[2]));
-            raum.searchAndCreate(new Kunstobjekt(columns[6], columns[7]));
+            Etage etage = museum.searchAndCreate(columns[1]);
+            Raum raum = etage.searchAndCreateRaum(columns[2]);
+            raum.searchAndCreate(columns[6], columns[7]);
         }
     }
 
@@ -41,32 +41,31 @@ public class Main {
         CSVReader csvReader = new CSVReader(mr);
         csvReader.readCSV("C:\\Users\\DCV\\Desktop\\museum.csv", ",");
 
-/*
-        try {
-            Vector<String[]> data = readCSV("C:\\Users\\DCV\\Desktop\\museum.csv", ",", museumVector);
-            for (String[] line : data) {
-                System.out.println(Arrays.toString(line));
-            }
-*/
-            for (Museum museum: museumVector) {
-                museum.printStruktur(" ");
-            }
 
-/*
-        } catch (IOException exc) {
-            exc.printStackTrace();
-        }
-*/
 
 //        --- A U S G A B E ---
+
+
+        int time = 4;
+
+
+        for (Museum m : museumVector) {
+            m.runSimulation(time);
+        }
+
+
+/*//        Print museumsstruktur
+        for (Museum museum: museumVector) {
+            System.out.println(museumVector.size());
+            museum.printStruktur(" ");
+        }*/
 
     }
 
 
-
     public static Museum findOrAdd(Museum neuesMuseum, Vector<Museum> museumVector) {
         int index = museumVector.indexOf(neuesMuseum);
-        if (index>= 0) {
+        if (index >= 0) {
             return museumVector.get(index);
         } else {
             museumVector.add(neuesMuseum);
@@ -109,9 +108,9 @@ public class Main {
                 if (spalte.length == 8) {
 
                     Museum museum = searchAndCreateMuseum(spalte[0], museumVector);
-                    Etage etage = museum.findOrAdd(new Etage(spalte[1]));
-                    Raum raum = etage.findOrAdd(new Raum(spalte[2]));
-                    Kunstobjekt kunstobjekt = raum.searchAndCreate(new Kunstobjekt(spalte[6], spalte[7]));
+                    Etage etage = museum.searchAndCreate((spalte[1]));
+                    Raum raum = etage.searchAndCreateRaum((spalte[2]));
+                    Kunstobjekt kunstobjekt = raum.searchAndCreate(spalte[6], spalte[7]);
                 }
             }
         } finally {
