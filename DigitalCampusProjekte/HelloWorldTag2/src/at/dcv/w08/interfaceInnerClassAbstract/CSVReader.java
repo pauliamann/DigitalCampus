@@ -26,7 +26,7 @@ public class CSVReader {
                         if (processor.isLineValid(spalte.length)) {
                             processor.process(spalte);
                         } else {
-                            System.out.println("Zeile konnte nicht gelesen werden: \n" + line);
+//                            System.out.println("Zeile konnte nicht gelesen werden: \n" + line) ;
                         }
                     }
                     ++idxLine;
