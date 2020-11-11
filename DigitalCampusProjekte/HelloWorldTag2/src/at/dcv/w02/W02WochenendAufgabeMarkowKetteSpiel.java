@@ -45,28 +45,4 @@ public class W02WochenendAufgabeMarkowKetteSpiel {
         return zufallsZahl;
     }
 
-/*    public static int bewegung (int zufallsZahl, int spielfeldLinks, int spielfeldRechts) {
-
-
-
-        if (zufallsZahl <= 2 ) {
-            --spielfeldLinks;
-            ++spielfeldRechts;
-        }
-        if (zufallsZahl >= 7 ) {
-            ++spielfeldLinks;
-            --spielfeldRechts;
-        }
-       // return (zufallsZahl & spielfeldLinks & spielfeldRechts);
-
-    }*/
-
-    /*--- SpielFeld Ausgabe mit Punkten & dem Männchen --- */
-/*    public static int spielFeld (int spielfeldLinks, int spielfeldRechts, int spielFeldWeite)  {
-
-
-        System.out.println();
-
-        return spielFeld(spielfeldLinks, spielfeldRechts, spielFeldWeite);
-    }*/
 }
