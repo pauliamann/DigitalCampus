@@ -36,7 +36,6 @@ public class main {
                         String[] spalte = line.split(",");
                         if (spalte.length == 2) {
                             Tisch t = rest1.searchAndCreateTisch(spalte[0], Integer.valueOf(spalte[1]));
-
                         } else {
                             System.out.println("Zeile konnte nicht gelesen werden: \n" + line);
                         }
