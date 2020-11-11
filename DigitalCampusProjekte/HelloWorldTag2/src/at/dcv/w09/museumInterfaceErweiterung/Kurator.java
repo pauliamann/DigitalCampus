@@ -1,7 +1,5 @@
 package at.dcv.w09.museumInterfaceErweiterung;
 
-import at.dcv.w08.museum.Kunstobjekt;
-
 import java.util.Random;
 import java.util.Vector;
 

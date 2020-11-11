@@ -77,19 +77,19 @@ public class Main {
 //            new Besucher("Gundula Golf", m);
 //            new Besucher("Hermann Dubios",m);
 
-//            new Dieb("Richard Räuber", m);
+            new Dieb("Richard Räuber", m);
 
 /*
             m.createBesucher("Berna Dette");
             m.createBesucher("Gundula Golf");
             m.createBesucher("Hermann Dubios");
-
-            m.createDieb("Richard Räuber");
-
-            m.createWaechter("Wielfred Wach");
-            m.createWaechter("Heinrich Handschnelle");
-            m.createWaechter("Robert Räuberfänger");
 */
+//            m.createDieb("Richard Räuber");
+//
+//            m.createWaechter("Wielfred Wach");
+//            m.createWaechter("Heinrich Handschnelle");
+//            m.createWaechter("Robert Räuberfänger");
+
             Kurator k = new Kurator("Kevin", m, kaufObjekt);
 /*
             System.out.println("Print Museums-Struktur:");
