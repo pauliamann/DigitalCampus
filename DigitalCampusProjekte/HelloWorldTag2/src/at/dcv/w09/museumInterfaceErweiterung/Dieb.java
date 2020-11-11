@@ -1,7 +1,6 @@
 package at.dcv.w09.museumInterfaceErweiterung;
 
 import java.util.Random;
-
 import java.util.Vector;
 
 import static at.dcv.w09.museumInterfaceErweiterung.Main.ANSI_RESET;
@@ -15,9 +14,9 @@ public class Dieb extends Besucher {
         super(name, museum);
     }
 
-    /*@Override
+    @Override
     public void bewundern() {
-        System.out.println(getName() + " ist in Raum " + getRaum().getNamen());
+        System.out.println(" + DIEB " + getName() + " ist in Raum " + getRaum().getNamen());
         Vector<KunstObjekt> objekte = getRaum().getKunstObjekte();
         if (objekte.size() > 0) {
             KunstObjekt k = objekte.get(random.nextInt(objekte.size()));
@@ -31,6 +30,6 @@ public class Dieb extends Besucher {
             System.out.println("Alle Objekte wurden gestohlen !");
         }
         System.out.println();
-    }*/
+    }
 
 }
