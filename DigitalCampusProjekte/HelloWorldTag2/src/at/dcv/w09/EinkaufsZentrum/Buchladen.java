@@ -15,6 +15,8 @@ public class Buchladen extends Fachladen{
 
     @Override
     public String toString() {
-        return super.toString();
+        return getClass().getSimpleName();
     }
+
+
 }

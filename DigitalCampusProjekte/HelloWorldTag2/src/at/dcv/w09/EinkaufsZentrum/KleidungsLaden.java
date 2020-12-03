@@ -11,5 +11,8 @@ public class KleidungsLaden extends Fachladen{
         return Kleid.DESCRIPTION;
     }
 
-
+    @Override
+    public String toString() {
+        return getClass().getSimpleName();
+    }
 }

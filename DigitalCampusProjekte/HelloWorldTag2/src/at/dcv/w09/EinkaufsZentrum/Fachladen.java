@@ -24,12 +24,13 @@ public abstract class Fachladen implements IProduktKategorie {
     }
 
     public void printÜbersicht() {
-        System.out.println("--- Statistik " + this.getClass().getSimpleName() + " ---");
+        System.out.println(" " + this.getClass().getSimpleName() +  " hat folgende Produkte:");
         for (Produkt p: produktVector) {
-            System.out.println(" " + p);
+            System.out.println(" - " + p);
         }
         System.out.println();
     }
+
 
 
 }

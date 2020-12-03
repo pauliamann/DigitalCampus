@@ -5,9 +5,11 @@ public class Buch extends Produkt {
     public static final String DESCRIPTION = "Buch";
 
     private String name;
+    private int preis;
 
-    public Buch(String name) {
+    public Buch(String name, int preis) {
         this.name = name;
+        this.preis = preis;
     }
 
     @Override

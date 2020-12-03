@@ -12,4 +12,9 @@ public class LebensmittelLaden extends Fachladen{
     public String getDescription() {
         return Lebensmittel.DESCRIPTION;
     }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName();
+    }
 }
